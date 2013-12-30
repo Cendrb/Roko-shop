@@ -1,0 +1,34 @@
+﻿<div id="product_list" >
+  <h1>Výpis produktů</h1>
+
+  <table>
+  <% @products.each do |product| %>
+    <tr class="<%= cycle('list_line_odd', 'list_line_even') %>" >
+
+      <td>
+        <%= image_tag(product.image_url, :class => 'list_image') %>
+      </td>
+
+      <td class="list_description" >
+        <dl>
+          <dt><%= product.title %></dt>
+          <dd><%= truncate(strip_tags(product.description),
+                  :length => 80) %></dd>
+        </dl>
+      </td>
+
+      <td class="list_actions" >
+        <%= link_to 'Zobrazit', product %><br/>
+        <%= link_to 'Upravit', edit_product_path(product) %><br/>
+        <%= link_to 'Odstranit', product,
+                    :confirm => 'Opravdu odstranit?',
+                    :method => :delete %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+</div>
+
+<br />
+
+<%= link_to 'Nový produkt', new_product_path %>
