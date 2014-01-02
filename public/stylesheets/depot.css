@@ -11,7 +11,7 @@
 
 
 #store h1 {
-        font:  150% sans-serif;
+        font:  200% sans-serif;
         color: #226;
         border-bottom: 3px dotted #77d;
 }
@@ -61,7 +61,7 @@
 }
 
 #product_list .list_line_odd {
-  background:   #f8b0f8;
+  background:   #dcdcdc;
 }
 
 /* Záznam v katalogu obchodu */
