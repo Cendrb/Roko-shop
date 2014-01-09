@@ -1,4 +1,7 @@
 RokoShop::Application.routes.draw do
+  get "penachim/mapa"
+  get "penachim/fuckoff"
+  get "penachim/rododendron"
   resources :products
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,2 @@
+class PenisController < ApplicationController
+end

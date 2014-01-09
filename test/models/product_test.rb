@@ -39,4 +39,7 @@ class ProductTest < ActiveSupport::TestCase
       assert new_product(name).invalid?, "#{name} by nemělo být platné"
     end
   end
+  test "product is not valid without unique title" do
+    
+  end
 end
