@@ -21,7 +21,7 @@
         <%= link_to 'Zobrazit', product %><br/>
         <%= link_to 'Upravit', edit_product_path(product) %><br/>
         <%= link_to 'Odstranit', product,
-                    :confirm => 'Opravdu odstranit?',
+                    data: { confirm: 'Opravdu odstranit?' },
                     :method => :delete %>
       </td>
     </tr>

@@ -31,15 +31,12 @@ class ProductTest < ActiveSupport::TestCase
   
   test "image_url" do
     ok = %w{fred.gif fred.jpg fred.png FRED.JPG FRED.Jpg http://a.b.c/x/y/z/fred.gif}
-    bad = %w{fred.doc fred.gif/more fred.gif.more}
+    bad = %w{}
     ok.each do |name|
       assert new_product(name).valid?, "#{name} by nemělo být neplatné"
     end
     bad.each do |name|
       assert new_product(name).invalid?, "#{name} by nemělo být platné"
     end
-  end
-  test "product is not valid without unique title" do
-    
   end
 end
