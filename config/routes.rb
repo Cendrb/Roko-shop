@@ -1,4 +1,6 @@
 RokoShop::Application.routes.draw do
+  resources :carts
+
   get "store/index"
   get "penachim/mapa"
   get "penachim/fuckoff"
