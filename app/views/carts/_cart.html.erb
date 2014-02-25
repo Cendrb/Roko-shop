@@ -1,0 +1,11 @@
+<div class="cart_title">Nákupní košouršík</div>
+	<table>
+	<%= render cart.line_items %>
+	<tr class="total_line">
+		<td colspan="">Celkem</td>
+		<td class="total_cell">
+			<%= number_to_currency(cart.total_price, :locale => :cs)%>
+		</td>
+	</tr>
+</table>
+<%= button_to 'Vyprázdnit košík', cart, :method => :delete, :confirm => 'Opravdu chcete vymazat všechny položky z košíku?' %>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>                                           <!-- řádek 1 -->
+﻿<!DOCTYPE html>                                       
 <html>
 <head>
   <title>Internetové knihkupectví Falus</title>
@@ -7,21 +7,22 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body id="store" >                                        <!-- řádek 10 -->
+<body id="store" >                                   
   <div id="banner" >
     <%= image_tag("logo.png") %>
     <%= @page_title || "Pragmatická Ivona" %>
   </div>
-  <div id="columns" >                                     <!-- řádek 15 -->
+  <div id="columns" >                                   
     <div id="side" >
-      <a href="25.134.14.51:3000" >Úvod</a><br />
-      <a href="http://www.maryporn.com" >Otázky</a><br />
-      <a href="http://redtube.com" >Novinky</a><br />
-      <a href="http://www.porn.com" >Kontakt</a><br /> <!-- řádek 20 -->
+    	<div id="cart">
+    		<%= render @cart %>
+    		</div>
+      	<%= link_to("Úvod", root_path) %><br />
+		<%= link_to("Košíček!", carts_path) %>
     </div>
     <div id="main" >
       <%= yield %>
     </div>
-  </div>                                                  <!-- řádek 25 -->
+  </div>                                                
 </body>
 </html>

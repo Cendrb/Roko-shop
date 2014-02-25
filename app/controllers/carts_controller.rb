@@ -54,9 +54,12 @@ class CartsController < ApplicationController
   # DELETE /carts/1
   # DELETE /carts/1.json
   def destroy
+    @cart = current_cart
     @cart.destroy
+    session[:cart_id] = nil
+    
     respond_to do |format|
-      format.html { redirect_to carts_url }
+      format.html { redirect_to root_url, :notice => 'Váš košík je v současnosti prázdný' }
       format.json { head :no_content }
     end
   end
@@ -64,7 +67,12 @@ class CartsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cart
+      begin
       @cart = Cart.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        logger.error "Pokus o přístup k neplatnému košššíku #{params[:id]}"
+        redirect_to root_url, :notice => "Neplatný košík!"
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
