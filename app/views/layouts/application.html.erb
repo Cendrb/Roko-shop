@@ -15,7 +15,9 @@
   <div id="columns" >                                   
     <div id="side" >
     	<div id="cart">
+    		<% if @cart %>
     		<%= render @cart %>
+    		<% end %>
     		</div>
       	<%= link_to("Úvod", root_path) %><br />
 		<%= link_to("Košíček!", carts_path) %>
