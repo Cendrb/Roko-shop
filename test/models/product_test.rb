@@ -31,9 +31,9 @@ class ProductTest < ActiveSupport::TestCase
   
   test "image_url" do
     ok = %w{fred.gif fred.jpg fred.png FRED.JPG FRED.Jpg http://a.b.c/x/y/z/fred.gif}
-    bad = %w{}
+    bad = %w{psim.txt}
     ok.each do |name|
-      assert new_product(name).valid?, "#{name} by nemělo být neplatné"
+      assert new_product(name).valid?, "#{name} by mělo být neplatné"
     end
     bad.each do |name|
       assert new_product(name).invalid?, "#{name} by nemělo být platné"

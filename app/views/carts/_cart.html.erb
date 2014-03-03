@@ -9,5 +9,8 @@
 		</td>
 	</tr>
 </table>
+
+<%= button_to "Objednat", new_order_path, :method => :get %>
+
 <%= button_to 'Vyprázdnit košík', cart, :method => :delete, data: { :confirm => 'Opravdu chcete vymazat všechny položky z košíku?' } %>
 <% end %>

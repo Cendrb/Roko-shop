@@ -1,12 +1,12 @@
 RokoShop::Application.routes.draw do
+  resources :orders
+
   resources :line_items
 
   resources :carts
 
   get "store/index"
-  get "penachim/mapa"
-  get "penachim/fuckoff"
-  get "penachim/rododendron"
+ 
   resources :products
 
   # The priority is based upon order of creation: first created -> highest priority.
