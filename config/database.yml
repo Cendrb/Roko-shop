@@ -22,6 +22,4 @@ production:
   adapter: postgresql
   database: utu_production
   pool: 5
-  password: pirkesna
-  username: postgres
   timeout: 5000
