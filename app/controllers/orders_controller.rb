@@ -16,11 +16,10 @@ class OrdersController < ApplicationController
   def new
     @cart = current_cart
     if @cart.line_items.empty?
-      redirect_to store_url, :notice => "Košík je prázdný"
+      redirect_to root_url, :notice => "Košík je prázdný"
       return
     end
   end
-
   # GET /orders/1/edit
   def edit
   end
