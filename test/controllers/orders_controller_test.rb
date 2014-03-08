@@ -27,10 +27,10 @@ end
 
   test "should create order" do
     assert_difference('Order.count') do
-      post :create, order: { adress: @order.adress, email: @order.email, name: @order.name, pay_type: @order.pay_type }
+      post :create, order: { adress: @order.address, email: @order.email, name: @order.name, pay_type: @order.pay_type }
     end
 
-    assert_redirected_to order_path(assigns(:order))
+    assert_redirected_to root_path
   end
 
   test "should show order" do
