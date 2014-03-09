@@ -30,7 +30,7 @@ end
       post :create, order: { adress: @order.address, email: @order.email, name: @order.name, pay_type: @order.pay_type }
     end
 
-    assert_redirected_to root_path
+    assert_redirected_to store_path
   end
 
   test "should show order" do

@@ -59,7 +59,7 @@ class CartsController < ApplicationController
     session[:cart_id] = nil
     
     respond_to do |format|
-      format.html { redirect_to root_url, :notice => 'Váš košík je v současnosti prázdný' }
+      format.html { redirect_to store_url, :notice => 'Váš košík je v současnosti prázdný' }
       format.json { head :no_content }
     end
   end
@@ -71,7 +71,7 @@ class CartsController < ApplicationController
       @cart = Cart.find(params[:id])
       rescue ActiveRecord::RecordNotFound
         logger.error "Pokus o přístup k neplatnému košššíku #{params[:id]}"
-        redirect_to root_url, :notice => "Neplatný košík!"
+        redirect_to store_url, :notice => "Neplatný košík!"
       end
     end
 

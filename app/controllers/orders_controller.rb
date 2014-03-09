@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
     @order = Order.new
     @cart = current_cart
     if @cart.line_items.empty?
-      redirect_to root_url, :notice => "Košík je prázdný"
+      redirect_to store_url, :notice => "Košík je prázdný"
       return
     end
   end
@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-        format.html { redirect_to root_url, notice: 'Děkujeme za objednávku' }
+        format.html { redirect_to store_url, notice: 'Děkujeme za objednávku' }
         format.json { render action: 'show', status: :created, location: @order }
       else
         format.html { render action: 'new' }

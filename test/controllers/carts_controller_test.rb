@@ -49,12 +49,12 @@ class CartsControllerTest < ActionController::TestCase
       delete :destroy, id: @cart
     end
 
-    assert_redirected_to root_path
+    assert_redirected_to store_path
   end
   
   test "requires item in cart" do
     get :new
-    assert_redirected_to root_path
+    assert_redirected_to store_path
     assert_equal flash[:notice], 'Košík je prázdný'
   end
 end
