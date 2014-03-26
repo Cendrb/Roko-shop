@@ -1,29 +1,30 @@
-﻿<!DOCTYPE html>                                       
+﻿<!DOCTYPE html>
 <html>
-<head>
-  <title>Internetové knihkupectví Halbalus</title>
-  <%= stylesheet_link_tag "depot" %>
-  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body id="store" >                             
-  <div id="banner" >
-    <%= image_tag("logo.png") %>
-    <%= @page_title || "Pragmatická Ivona" %>
-  </div>
-  <div id="columns" >                                   
-    <div id="side" >
-    	<div id="cart">
-    		<% if @cart %>
-    		<%= render @cart %>
-    		<% end %>
-    		</div>
-      	<%= link_to("Úvod", store_path) %><br />
-    </div>
-    <div id="main" >
-      <%= yield %>
-    </div>
-  </div>                                                
-</body>
+    <head>
+        <title>Internetové knihkupectví Halbalus</title>
+        <%= stylesheet_link_tag "depot" %>
+        <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+        <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body id="store" >
+        <div id="banner" >
+            <%= image_tag("logo.png") %>
+            <%= @page_title || "Pragmatická Ivona" %>
+        </div>
+        <div id="columns" >
+            <div id="side" >
+                <div id="cart">
+                    <% if @cart %>
+                    <%= render @cart %>
+                    <% end %>
+                </div>
+                <%= link_to("Úvod", store_path) %>
+                <br />
+            </div>
+            <div id="main" >
+                <%= yield %>
+            </div>
+        </div>
+    </body>
 </html>
