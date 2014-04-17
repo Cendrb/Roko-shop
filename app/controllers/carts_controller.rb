@@ -15,6 +15,11 @@ class CartsController < ApplicationController
   # GET /carts/new
   def new
     @cart = Cart.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @cart }
+    end
   end
 
   # GET /carts/1/edit

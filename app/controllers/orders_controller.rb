@@ -35,6 +35,7 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
+        Notifier.order_received(@order).deliver
         format.html { redirect_to store_url, notice: 'Děkujeme za objednávku' }
         format.json { render action: 'show', status: :created, location: @order }
       else

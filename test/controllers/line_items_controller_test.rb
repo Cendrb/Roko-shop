@@ -41,20 +41,21 @@ class LineItemsControllerTest < ActionController::TestCase
 
   test "should destroy line_item" do
     assert_difference('LineItem.count', -1) do
-      delete :destroy, id: @line_item.id
+      delete :destroy, :id => @line_item.to_param
     end
 
     assert_redirected_to line_items_path
   end
-  
-  test "should create line_item via ajax"
-  assert_difference('LineItem.count') do
-    xhr :post, :create, :product_id => products(:ruby).id
+
+  test "should create line_item via ajax" do
+    assert_difference('LineItem.count') do
+      xhr :post, :create, :product_id => products(:ruby).id
+    end
   end
-  
+
   assert_response :success
   assert_select_rjs :replace_html, 'cart' do
     assert_select 'tr#current_item td'
     /Psim?/
   end
-  end
+end
