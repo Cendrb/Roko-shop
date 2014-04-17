@@ -2,7 +2,7 @@
 development:
   adapter: postgresql
   database: roko_development
-  password: pirkesna
+  password: danjegay
   username: postgres
   pool: 5
   timeout: 5000
@@ -14,7 +14,7 @@ test:
   adapter: postgresql
   database: roko_test
   pool: 5
-  password: pirkesna
+  password: danjegay
   username: postgres
   timeout: 5000
 
