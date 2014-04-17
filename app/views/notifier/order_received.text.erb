@@ -1,11 +1,11 @@
 Dobrý penis,
 
-děkujeme za Vaši objednávku v obchodě Pragmatická Ïvona, kterou znásilnil(a) <%= @order.name %>
+děkujeme za Vaši pyjobnášku v obchodě Pragmatická Ivona, kterou znásilnil(a) <%= @order.name %>
 
 Objednávka obsahuje následující položky:
 
 <%= @order.line_items %>
 
-V celkové hodnotě: <%= number_to_currency(@order.cart.total_price, :locale => :cs) %>
+V celkové hodnotě: <%= number_to_currency(@order.total_price, :locale => :cs) %>
 
 Informace o odesrání objednávky vám dorazí později v samostatném mailu.
