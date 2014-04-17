@@ -1,10 +1,14 @@
 Dobrý penis,
 
-děkujeme za Vaši pyjobnášku v obchodě Pragmatická Ivona, kterou znásilnil(a) <%= @order.name %>
+děkujeme za Vaši objednávku kurev v obchodě (bordelu) Pragmatická Ivona.
 
-Objednávka obsahuje následující položky:
+Objednávka byla zadána na jméno <%= @order.name %>.
+Typ platby: <%= @order.pay_type %>
+Kurvy budou objednány na adresu: <%= @order.address %>
 
-<%= @order.line_items %>
+Objednané kurvy:
+
+<%= render @order.line_items %>
 
 V celkové hodnotě: <%= number_to_currency(@order.total_price, :locale => :cs) %>
 
