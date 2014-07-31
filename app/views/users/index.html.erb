@@ -1,0 +1,27 @@
+<h1>Soudruzi budovatelé</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Jméno soudruha</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= link_to 'Zobrazit', user %></td>
+        <td><%= link_to 'Upravit', edit_user_path(user) %></td>
+        <td><%= link_to 'Znásilnit', user, method: :delete, data: { confirm: 'Opravdu chcete soudruhua budovatele / soudružku budovatelku #{user.name} znásilnit?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nový soudruh', new_user_path %>

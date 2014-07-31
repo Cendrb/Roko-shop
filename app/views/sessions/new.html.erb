@@ -1,0 +1,29 @@
+<div class="depot_form">
+    <% if flash[:alert] %>
+    <p id="notice">
+        <%= flash[:alert] %>
+    </p>
+    <% end %>
+
+    <%= form_tag do %>
+    <fieldset>
+        <legend>
+            Přihlašte svůj penis!
+        </legend>
+
+        <div>
+            <label for="name">Jméno:</label>
+            <%= text_field_tag :name, params[:name] %>
+        </div>
+        
+        <div>
+            <label for="password">Heslo:</label>
+            <%= text_field_tag :password, params[:password] %>
+        </div>
+        
+        <div>
+            <%= submit_tag "Připenisovat" %>
+        </div>
+    </fieldset>
+    <% end %>
+</div>
